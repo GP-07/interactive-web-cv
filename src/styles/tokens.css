@@ -1,0 +1,15 @@
+:root {
+  /* Colores */
+  --color-bg: #ffffff;
+  --color-text: #171717;
+
+  /* Tipografía */
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0a0a0a;
+    --color-text: #ededed;
+  }
+}
