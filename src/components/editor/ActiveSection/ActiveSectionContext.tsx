@@ -42,6 +42,13 @@ export function ActiveSectionProvider({ sectionIds, children }: { sectionIds: st
     // La última sección puede ser más corta que la pantalla: al llegar al final, se marca igual.
     if (max > 0 && top >= max - 4) index = sectionIds.length - 1;
     setActiveIndex(index);
+
+    // La URL refleja la sección actual (#experiencia) para poder compartir el link.
+    // replaceState no agrega entradas al historial: "atrás" sale de la página, no recorre secciones.
+    const hash = index === 0 ? "" : `#${sectionIds[index]}`;
+    if (window.location.hash !== hash) {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
+    }
   }, [sectionIds]);
 
   useEffect(() => {
@@ -72,8 +79,8 @@ export function ActiveSectionProvider({ sectionIds, children }: { sectionIds: st
   const scrollToSection = useCallback((id: string) => {
     const target = document.getElementById(id);
     if (!target || !scrollerRef.current) return;
+    // La URL se actualiza sola al llegar, desde update().
     scrollerRef.current.scrollTo({ top: target.offsetTop });
-    window.history.replaceState(null, "", `#${id}`);
   }, []);
 
   const value = useMemo(
