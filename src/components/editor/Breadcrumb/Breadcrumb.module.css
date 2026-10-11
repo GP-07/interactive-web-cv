@@ -1,0 +1,116 @@
+.breadcrumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 3.5rem;
+  background: var(--color-chrome);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.root {
+  flex: none;
+  padding: 0 var(--space-1) 0 var(--space-5);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-ui);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-5) var(--space-3) 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.item::before {
+  content: "›";
+  padding-inline: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  transition: color 200ms, background-color 200ms;
+}
+
+.icon {
+  opacity: 0.45;
+  transition: opacity 200ms;
+}
+
+.crumb:hover {
+  color: var(--color-text);
+  background: var(--color-hover);
+}
+
+.crumb[data-state="done"] {
+  color: var(--color-text);
+}
+
+.crumb[data-state="current"] {
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  font-weight: 500;
+}
+
+.crumb[data-state="done"] .icon,
+.crumb[data-state="current"] .icon {
+  opacity: 1;
+}
+
+/* Línea de progreso de lectura */
+.progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (max-width: 760px) {
+  .root {
+    display: none;
+  }
+
+  .list {
+    padding-left: var(--space-2);
+  }
+
+  .item:first-child::before {
+    content: none;
+  }
+
+  .crumb {
+    padding-inline: var(--space-2);
+    font-size: var(--text-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crumb,
+  .icon {
+    transition: none;
+  }
+}

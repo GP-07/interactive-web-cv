@@ -1,15 +1,107 @@
+/*
+  Tokens de diseño. Tema oscuro por defecto; el claro se aplica por
+  preferencia del sistema o con data-theme="light" en <html>.
+*/
 :root {
-  /* Colores */
-  --color-bg: #ffffff;
-  --color-text: #171717;
+  /* Colores: interfaz del editor */
+  --color-backdrop: #0c0d10;
+  --color-chrome: #181818;
+  --color-editor: #1f1f1f;
+  --color-border: #2b2b2b;
+  --color-text: #d4d4d4;
+  --color-text-muted: #8b8b8b;
+  --color-line-number: #6e7681;
+  --color-hover: #2a2d2e;
+  --color-accent: #4ec9b0;
+  --color-status-bg: #16695d;
+  --color-status-text: #ffffff;
+  --color-status-hover: rgb(255 255 255 / 0.15);
+  --color-available: #7ee2a8;
 
-  /* Tipografía */
-  --font-sans: Arial, Helvetica, sans-serif;
+  /* Colores: resaltado de sintaxis */
+  --syntax-keyword: #569cd6;
+  --syntax-string: #ce9178;
+  --syntax-function: #dcdcaa;
+  --syntax-type: #4ec9b0;
+  --syntax-comment: #6a9955;
+  --syntax-number: #b5cea8;
+  --syntax-property: #9cdcfe;
+
+  /* Tipografía (las variables --font-geist-sans y --font-jetbrains-mono las define next/font) */
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-ui: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-base: 1rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.1875rem;
+  --text-2xl: 1.375rem;
+  --text-display: clamp(2rem, 4vw, 3rem);
+  --leading-code: 1.75;
+  --leading-prose: 1.7;
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-10: 2.5rem;
+
+  /* Forma y medidas del editor */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --statusbar-height: 26px;
+  --code-max-width: 980px;
+  --gutter-width: 4.25rem;
+
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0a0a0a;
-    --color-text: #ededed;
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-backdrop: #dfe1e5;
+    --color-chrome: #f3f3f3;
+    --color-editor: #ffffff;
+    --color-border: #e0e0e0;
+    --color-text: #1f1f1f;
+    --color-text-muted: #6b6b6b;
+    --color-line-number: #9a9a9a;
+    --color-hover: #e8e8e8;
+    --color-accent: #0f7b6c;
+    --color-status-bg: #0f7b6c;
+    --syntax-keyword: #0000ff;
+    --syntax-string: #a31515;
+    --syntax-function: #795e26;
+    --syntax-type: #267f99;
+    --syntax-comment: #008000;
+    --syntax-number: #098658;
+    --syntax-property: #001080;
+    color-scheme: light;
   }
+}
+
+:root[data-theme="light"] {
+  --color-backdrop: #dfe1e5;
+  --color-chrome: #f3f3f3;
+  --color-editor: #ffffff;
+  --color-border: #e0e0e0;
+  --color-text: #1f1f1f;
+  --color-text-muted: #6b6b6b;
+  --color-line-number: #9a9a9a;
+  --color-hover: #e8e8e8;
+  --color-accent: #0f7b6c;
+  --color-status-bg: #0f7b6c;
+  --syntax-keyword: #0000ff;
+  --syntax-string: #a31515;
+  --syntax-function: #795e26;
+  --syntax-type: #267f99;
+  --syntax-comment: #008000;
+  --syntax-number: #098658;
+  --syntax-property: #001080;
+  color-scheme: light;
 }

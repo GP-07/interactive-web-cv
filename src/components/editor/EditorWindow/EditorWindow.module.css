@@ -1,0 +1,10 @@
+/* El editor ocupa toda la pantalla: la página "es" el IDE */
+.window {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) var(--statusbar-height);
+  grid-template-columns: minmax(0, 1fr);
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-editor);
+  font-size: var(--text-ui);
+}

@@ -1,0 +1,12 @@
+/* position: relative hace que offsetTop de cada sección se mida desde acá */
+.scroll {
+  position: relative;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll {
+    scroll-behavior: auto;
+  }
+}
