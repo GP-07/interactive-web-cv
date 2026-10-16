@@ -7,7 +7,6 @@ export interface Job {
   role: string;
   company: string;
   period: string;
-  location: string;
   highlights: string[];
   stack: string[];
 }
@@ -50,7 +49,6 @@ export interface CV {
   /** Texto de la barra de estado. Si no está, no se muestra el indicador. */
   availability?: string;
   experience: Job[];
-  projects: Project[];
   skills: {
     intro: string;
     groups: SkillGroup[];
@@ -63,6 +61,5 @@ export interface CV {
     intro: string;
     email: string;
     links: ContactLink[];
-    closing: string;
   };
 }

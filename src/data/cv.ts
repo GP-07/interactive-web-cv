@@ -5,70 +5,54 @@ export const cv: CV = {
   name: "Guido Pallas",
   title: "Software Engineer",
   summary:
-    "Construyo productos web de punta a punta: interfaces cuidadas, APIs prolijas y todo lo que hay en el medio. Me interesa que el software sea rápido, accesible y fácil de mantener.",
+    "Passionate about building high-quality solutions within teams that value respect and a positive work environment. On my side, I always try to foster the same mindset, while also encouraging collective growth. I enjoy taking on design challenges that push me to think about the algorithms, patterns, and architectures that best fit each context. I value both the process and the outcome, which is why I like being involved in every part of the software development cycle.",
   facts: [
-    { label: "Base", value: "Buenos Aires, AR" },
-    { label: "Ahora", value: "Senior Frontend Engineer en Acme Corp" },
-    { label: "Estudios", value: "Ingeniería en Sistemas" },
-    { label: "Disponibilidad", value: "abierto a propuestas" },
+    { label: "Base", value: "Barcelona, ES" },
+    { label: "Now", value: "Open to work" },
+    { label: "Degree", value: "Computer Engineer" },
   ],
-  availability: "Disponible para trabajar",
+  availability: "Open to work",
   experience: [
     {
-      role: "Senior Frontend Engineer",
-      company: "Acme Corp",
-      period: "mar 2022 → presente",
-      location: "remoto",
+      role: "Software Engineer",
+      company: "InvGate",
+      period: "March 2022 → presente",
       highlights: [
-        "Lideré la migración del panel principal a Next.js y reduje el tiempo de carga un 40%.",
-        "Diseñé un sistema de componentes compartido entre 4 equipos de producto.",
-        "Acompañé a 3 desarrolladores junior con revisiones de código y pair programming.",
+        "Product: InvGate Asset Management",
+        "Focus on performance, scalability, and asynchronous processing challenges in a data-intensive environment with large volumes of interconnected asset data. Contribute to maintaining a reliable and efficient experience for enterprise customers managing complex IT infrastructures.",
       ],
-      stack: ["React", "Next.js", "TypeScript", "GraphQL", "Playwright"],
+      stack: ["Python 3", "Django 5.2", "PostgreSQL", "MySQL", "Claude code"],
+    },
+    {
+      role: "Software Engineer",
+      company: "Santander Tecnología",
+      period: "February 2020 → March 2022",
+      highlights: [
+        "Product: DEBIN",
+        "Implemented critical components using Ports and Adapters architecture, improving maintainability while contributing to key architecture and product decisions. Strengthened expertise in distributed systems design and technical trade-off analysis, while also mentoring a new team member during onboarding.",
+      ],
+      stack: ["Java 11", "Springboot", "MongoDB", "SOAP Web services"],
     },
     {
       role: "Full Stack Developer",
-      company: "Nimbus Labs",
-      period: "jun 2019 → feb 2022",
-      location: "Buenos Aires",
+      company: "IT Resources",
+      period: "March 2018 → February 2020",
       highlights: [
-        "Desarrollé una API de pagos que procesa más de 20.000 transacciones por día.",
-        "Automaticé el pipeline de despliegue y bajé los releases de 2 horas a 15 minutos.",
+        "Client: Monsanto/Bayer",
+        "Project: Barter",
+        "Owned services end-to-end in a microservice event-driven architecture. From analysis and development to their deploy on AWS and monitoring and support. Gained expertise in scalable event-driven systems, observability, and production incident resolution."
       ],
-      stack: ["Node.js", "PostgreSQL", "Docker", "AWS"],
+      stack: ["Java 8", "Springboot", "Hibernate", "PostgreSQL", "AWS", "Angular 5", "Kafka", "ELK"],
     },
     {
-      role: "Desarrollador Web",
-      company: "Freelance",
-      period: "ene 2017 → may 2019",
-      location: "freelance",
-      highlights: ["Entregué 12 sitios y aplicaciones para comercios y estudios profesionales."],
-      stack: ["JavaScript", "PHP", "MySQL"],
-    },
-  ],
-  projects: [
-    {
-      name: "Ruta Verde",
-      year: 2025,
-      type: "personal",
-      description:
-        "App que calcula la huella de carbono de cada viaje urbano y sugiere alternativas en transporte público o bicicleta.",
-      stack: ["Next.js", "Mapbox", "Supabase"],
-    },
-    {
-      name: "Panel de Métricas",
-      year: 2023,
-      type: "trabajo",
-      description:
-        "Dashboard interno en tiempo real para el equipo comercial, con alertas configurables y exportación de reportes.",
-      stack: ["React", "WebSockets", "D3"],
-    },
-    {
-      name: "Este sitio",
-      year: 2026,
-      type: "personal",
-      description: "Mi CV con forma de editor de código. Cada archivo es una sección.",
-      stack: ["Next.js", "TypeScript", "CSS Modules"],
+      role: "Software Developer",
+      company: "Ayi & Asociados",
+      period: "August 2016 → March 2018",
+      highlights: [
+        "Omnichannel platform team",
+        "The main challenge was rapidly gaining proficiency in Java with EJB for backend service development and Angular 2 for frontend implementation, while also adapting to and reviewing legacy AngularJS implementations already in use by existing clients."
+      ],
+      stack: ["Java core", "Java EJB", "Angular 2"],
     },
   ],
   skills: {
@@ -84,23 +68,21 @@ export const cv: CV = {
   education: {
     degrees: [
       {
-        title: "Ingeniería en Sistemas de Información",
-        institution: "Universidad de ejemplo",
-        period: "2012 – 2018",
+        title: "IT Engineering",
+        institution: "UADE",
+        period: "2019",
       },
     ],
     languages: [
-      { name: "Español", level: "nativo" },
-      { name: "Inglés", level: "avanzado (C1)" },
+      { name: "Spanish", level: "Native" },
+      { name: "English", level: "Advanced" },
     ],
   },
   contact: {
     intro: "Abierto a puestos full-time y freelance. El email es la vía más rápida.",
-    email: "guido@ejemplo.dev",
+    email: "guidopallas@gmail.com",
     links: [
-      { url: "https://www.linkedin.com/", display: "linkedin.com/in/tu-usuario" },
-      { url: "https://github.com/", display: "github.com/tu-usuario" },
+      { url: "https://www.linkedin.com/in/guidopallas", display: "linkedin.com/in/guidopallas" },
     ],
-    closing: "Gracias por pasar ✦",
   },
 };
