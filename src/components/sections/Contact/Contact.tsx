@@ -5,7 +5,7 @@ import { CodeLink, Line, Tok } from "@/components/editor/Code/Code";
 import { CopyButton } from "@/components/editor/CopyButton/CopyButton";
 
 export function Contact() {
-  const { intro, email, links, closing } = cv.contact;
+  const { intro, email, links } = cv.contact;
 
   return (
     <FileSection section={sections.contact}>
@@ -31,10 +31,6 @@ export function Contact() {
           <Tok kind="function">open</Tok> <CodeLink href={link.url}>{link.display}</CodeLink>
         </Line>
       ))}
-      <Line />
-      <Line>
-        <Tok kind="comment">{`# ${closing}`}</Tok>
-      </Line>
     </FileSection>
   );
 }

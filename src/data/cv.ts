@@ -56,13 +56,21 @@ export const cv: CV = {
     },
   ],
   skills: {
-    intro: "Herramientas que uso a diario, agrupadas por área",
-    groups: [
-      { name: "lenguajes", items: ["TypeScript", "JavaScript", "Python", "SQL"] },
-      { name: "frontend", items: ["React", "Next.js", "CSS", "Storybook"] },
-      { name: "backend", items: ["Node.js", "Express", "GraphQL"] },
-      { name: "datos_y_cloud", items: ["PostgreSQL", "AWS", "Docker", "Vercel"] },
-      { name: "testing", items: ["Jest", "Playwright", "GitHub Actions"] },
+    intro: "Technologies I work with, by level of experience",
+    levels: ["Familiar", "Intermediate", "Proficient", "Advanced", "Expert"],
+    items: [
+      { name: "Python", level: 5 },
+      { name: "Django", level: 5 },
+      { name: "PostgreSQL", level: 5 }, 
+      { name: "Java", level: 4 },
+      { name: "Spring Boot", level: 4 },
+      { name: "Claude Code", level: 3 },
+      { name: "AWS", level: 3 },
+      { name: "Kafka", level: 3 },
+      { name: "MySQL", level: 3 },
+      { name: "MongoDB", level: 3 },
+      { name: "Angular", level: 2 },
+      { name: "ELK", level: 2 },
     ],
   },
   education: {

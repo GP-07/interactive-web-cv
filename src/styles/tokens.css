@@ -27,6 +27,11 @@
   --syntax-number: #b5cea8;
   --syntax-property: #9cdcfe;
 
+  /* Chips de tecnologías: cada una aporta su tono, el tema define luz y saturación */
+  --chip-lightness: 0.8;
+  --chip-chroma: 0.11;
+  --chip-bg-alpha: 0.15;
+
   /* Tipografía (las variables --font-geist-sans y --font-jetbrains-mono las define next/font) */
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -81,6 +86,9 @@
     --syntax-comment: #008000;
     --syntax-number: #098658;
     --syntax-property: #001080;
+    --chip-lightness: 0.48;
+    --chip-chroma: 0.14;
+    --chip-bg-alpha: 0.1;
     color-scheme: light;
   }
 }
@@ -103,5 +111,8 @@
   --syntax-comment: #008000;
   --syntax-number: #098658;
   --syntax-property: #001080;
+  --chip-lightness: 0.48;
+  --chip-chroma: 0.14;
+  --chip-bg-alpha: 0.1;
   color-scheme: light;
 }

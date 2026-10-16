@@ -20,9 +20,12 @@ export interface Project {
   url?: string;
 }
 
-export interface SkillGroup {
+/** 1 = conocimiento básico · 5 = experto */
+export type SkillLevel = 1 | 2 | 3 | 4 | 5;
+
+export interface Skill {
   name: string;
-  items: string[];
+  level: SkillLevel;
 }
 
 export interface Degree {
@@ -51,7 +54,9 @@ export interface CV {
   experience: Job[];
   skills: {
     intro: string;
-    groups: SkillGroup[];
+    /** Nombre de cada nivel, del 1 al 5. */
+    levels: [string, string, string, string, string];
+    items: Skill[];
   };
   education: {
     degrees: Degree[];

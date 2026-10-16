@@ -126,6 +126,12 @@
   background: color-mix(in srgb, var(--syntax-string) 12%, transparent);
 }
 
+/* Chip con color propio: el tono llega por --hue, el resto depende del tema */
+.tinted {
+  color: oklch(var(--chip-lightness) var(--chip-chroma) var(--hue));
+  background: oklch(var(--chip-lightness) var(--chip-chroma) var(--hue) / var(--chip-bg-alpha));
+}
+
 .link {
   color: var(--color-accent);
   text-decoration: underline;

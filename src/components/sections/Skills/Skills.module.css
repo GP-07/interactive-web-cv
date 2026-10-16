@@ -1,0 +1,14 @@
+.list {
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--space-4);
+}
+
+.name {
+  min-width: var(--name-width);
+}

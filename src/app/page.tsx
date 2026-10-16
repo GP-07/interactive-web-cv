@@ -28,8 +28,8 @@ export default function Home() {
       >
         <ScrollArea>
           <About />
-          <Experience />
           <Skills />
+          <Experience />
           <Education />
           <Contact />
         </ScrollArea>

@@ -78,19 +78,37 @@ export function MdListItem({ label, children }: { label: string; children: React
   );
 }
 
-/** "nombre: [chip, chip, chip]" */
-export function ChipList({ name, items }: { name: string; items: string[] }) {
+/**
+ * "nombre: [chip, chip, chip]". Con `hueOf`, cada chip toma el tono (0–360) que
+ * devuelva; la luminosidad y saturación salen de los tokens de cada tema.
+ */
+export function ChipList({
+  name,
+  items,
+  hueOf,
+}: {
+  name: string;
+  items: string[];
+  hueOf?: (item: string) => number | undefined;
+}) {
   return (
     <div className={styles.chips}>
       <span>
         <span className={styles.property}>{name}</span>:
       </span>
       <ul className={styles.chipList}>
-        {items.map((item) => (
-          <li key={item} className={styles.chip}>
-            {item}
-          </li>
-        ))}
+        {items.map((item) => {
+          const hue = hueOf?.(item);
+          return (
+            <li
+              key={item}
+              className={cx(styles.chip, hue !== undefined && styles.tinted)}
+              style={hue !== undefined ? ({ "--hue": hue } as CSSProperties) : undefined}
+            >
+              {item}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
