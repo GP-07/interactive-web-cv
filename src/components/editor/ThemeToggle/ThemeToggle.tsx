@@ -10,8 +10,8 @@ export function ThemeToggle({ className }: { className?: string }) {
   }
 
   return (
-    <button type="button" className={className} onClick={toggle} aria-label="Cambiar entre tema claro y oscuro">
-      ◐ Tema
+    <button type="button" className={className} onClick={toggle} aria-label="Toggle light and dark theme">
+      ◐ Theme
     </button>
   );
 }

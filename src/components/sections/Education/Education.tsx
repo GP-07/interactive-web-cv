@@ -9,7 +9,7 @@ export function Education() {
     <FileSection section={sections.education}>
       <Line>
         <MdHeading level={2} as="h3">
-          Educación
+          Education
         </MdHeading>
       </Line>
       <Line />
@@ -28,7 +28,7 @@ export function Education() {
       ))}
       <Line>
         <MdHeading level={2} as="h3">
-          Idiomas
+          Languages
         </MdHeading>
       </Line>
       <Line />

@@ -22,7 +22,7 @@ export function Breadcrumb({ root, items }: { root: string; items: SectionMeta[]
   }, [activeIndex]);
 
   return (
-    <nav className={styles.breadcrumb} aria-label="Secciones del CV">
+    <nav className={styles.breadcrumb} aria-label="CV sections">
       <span className={styles.root}>{root}</span>
       <ol ref={listRef} className={styles.list}>
         {items.map((item, i) => {

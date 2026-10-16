@@ -1,11 +1,11 @@
 import type { FileLanguage, SectionMeta } from "@/types/sections";
 
 export const sections = {
-  about: { id: "sobre-mi", label: "Sobre mí", file: "README.md", language: "markdown" },
+  about: { id: "about", label: "About me", file: "README.md", language: "markdown" },
   skills: { id: "stack", label: "Stack", file: "skills.yaml", language: "yaml" },
-  experience: { id: "experiencia", label: "Experiencia", file: "experience.ts", language: "typescript" },
-  education: { id: "estudios", label: "Estudios", file: "education.md", language: "markdown" },
-  contact: { id: "contacto", label: "Contacto", file: "contact.sh", language: "shell" },
+  experience: { id: "experience", label: "Experience", file: "experience.ts", language: "typescript" },
+  education: { id: "education", label: "Education", file: "education.md", language: "markdown" },
+  contact: { id: "contact", label: "Contact", file: "contact.sh", language: "shell" },
 } satisfies Record<string, SectionMeta>;
 
 /** Orden en que aparecen en la página y en el breadcrumb. */

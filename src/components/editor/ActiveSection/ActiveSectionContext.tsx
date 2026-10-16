@@ -43,7 +43,7 @@ export function ActiveSectionProvider({ sectionIds, children }: { sectionIds: st
     if (max > 0 && top >= max - 4) index = sectionIds.length - 1;
     setActiveIndex(index);
 
-    // La URL refleja la sección actual (#experiencia) para poder compartir el link.
+    // La URL refleja la sección actual (#experience) para poder compartir el link.
     // replaceState no agrega entradas al historial: "atrás" sale de la página, no recorre secciones.
     const hash = index === 0 ? "" : `#${sectionIds[index]}`;
     if (window.location.hash !== hash) {
@@ -61,7 +61,7 @@ export function ActiveSectionProvider({ sectionIds, children }: { sectionIds: st
       frame = requestAnimationFrame(update);
     };
 
-    // Si se entra con un link a una sección (#experiencia), se arranca ahí.
+    // Si se entra con un link a una sección (#experience), se arranca ahí.
     const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
     if (target) scroller.scrollTo({ top: target.offsetTop, behavior: "instant" });
 

@@ -16,7 +16,7 @@ export const cv: CV = {
     {
       role: "Software Engineer",
       company: "InvGate",
-      period: "March 2022 → presente",
+      period: "March 2022 → present",
       highlights: [
         "Product: InvGate Asset Management",
         "Focus on performance, scalability, and asynchronous processing challenges in a data-intensive environment with large volumes of interconnected asset data. Contribute to maintaining a reliable and efficient experience for enterprise customers managing complex IT infrastructures.",
@@ -95,7 +95,7 @@ export const cv: CV = {
     ],
   },
   contact: {
-    intro: "Abierto a puestos full-time y freelance. El email es la vía más rápida.",
+    intro: "Open to full-time and freelance roles. Email is the fastest way to reach me.",
     email: "guidopallas@gmail.com",
     links: [
       { url: "https://www.linkedin.com/in/guidopallas", display: "linkedin.com/in/guidopallas" },
