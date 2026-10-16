@@ -2,39 +2,23 @@ import type { CSSProperties } from "react";
 import { cv } from "@/data/cv";
 import { sections } from "@/data/sections";
 import { FileSection } from "@/components/editor/FileSection/FileSection";
-import { Line, Tok } from "@/components/editor/Code/Code";
-import { SkillBar } from "@/components/editor/SkillBar/SkillBar";
+import { YearsChart, yScale } from "@/components/charts/YearsChart/YearsChart";
 import styles from "./Skills.module.css";
 
 export function Skills() {
-  const { intro, levels, items } = cv.skills;
-  // Ancho del nombre más largo (+1 por los dos puntos), para alinear todas las barras.
-  const nameWidth = Math.max(...items.map((skill) => skill.name.length)) + 1;
+  const { unit, groups } = cv.skills;
+  // Misma escala en todos los paneles, para que las alturas se puedan comparar entre sí.
+  const scale = yScale(Math.max(...groups.flatMap((group) => group.items.map((skill) => skill.years))));
+  // Cada panel ocupa un ancho proporcional a sus columnas: así todas las columnas miden lo mismo.
+  const columns = groups.map((group) => `minmax(0, ${group.items.length}fr)`).join(" ");
 
   return (
     <FileSection section={sections.skills}>
-      <Line>
-        <Tok kind="comment">{`# ${intro}`}</Tok>
-      </Line>
-      <Line />
-      <ul className={styles.list} style={{ "--name-width": `${nameWidth}ch` } as CSSProperties}>
-        {items.map((skill) => {
-          const label = levels[skill.level - 1];
-          return (
-            <li key={skill.name}>
-              <Line>
-                <span className={styles.row}>
-                  <span className={styles.name}>
-                    <Tok kind="property">{skill.name}</Tok>:
-                  </span>
-                  <SkillBar level={skill.level} label={label} />
-                  <Tok kind="comment">{`# ${label}`}</Tok>
-                </span>
-              </Line>
-            </li>
-          );
-        })}
-      </ul>
+      <div className={styles.panels} style={{ "--panel-columns": columns } as CSSProperties}>
+        {groups.map((group) => (
+          <YearsChart key={group.title} title={group.title} items={group.items} unit={unit} scale={scale} />
+        ))}
+      </div>
     </FileSection>
   );
 }

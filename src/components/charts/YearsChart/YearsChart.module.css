@@ -1,0 +1,187 @@
+/* Panel estilo dashboard: borde sutil y título arriba a la izquierda */
+.chart {
+  min-width: 0;
+  padding: var(--space-3) var(--space-4) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+}
+
+.title {
+  font-size: var(--text-ui);
+  font-weight: 600;
+}
+
+/* En pantallas angostas el gráfico scrollea de costado en vez de aplastar las columnas */
+.scroller {
+  overflow-x: auto;
+  padding-top: var(--space-10);
+}
+
+.inner {
+  --axis-width: 2rem;
+  --column-min: 2.25rem;
+  min-width: calc(var(--axis-width) + var(--columns) * var(--column-min));
+  position: relative;
+}
+
+.unit {
+  position: absolute;
+  top: calc(-1 * var(--space-6));
+  left: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.plot {
+  position: relative;
+  height: 15rem;
+  margin-left: var(--axis-width);
+  border-bottom: 1px solid var(--color-text-muted);
+}
+
+/* Líneas de la grilla: recesivas, detrás de las columnas */
+.tick {
+  position: absolute;
+  right: 0;
+  bottom: var(--at);
+  left: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.tickLabel {
+  position: absolute;
+  right: calc(100% + var(--space-2));
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.columns,
+.axis {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  list-style: none;
+}
+
+.columns {
+  position: absolute;
+  inset: 0;
+}
+
+.slot {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: default;
+}
+
+.slot:focus-visible {
+  outline-offset: 2px;
+}
+
+.bar {
+  position: relative;
+  width: min(24px, 60%);
+  height: var(--height);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: var(--color-accent);
+  transition: filter 150ms;
+}
+
+.slot:hover .bar,
+.slot:focus .bar {
+  filter: brightness(1.2);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  z-index: 2;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-chrome);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  /* display y no opacity: oculta no ocupa lugar ni genera scroll horizontal */
+  display: none;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* Las de los extremos se alinean hacia adentro para no salirse del gráfico */
+.slot:nth-child(-n + 3) .tooltip {
+  left: 0;
+  transform: none;
+}
+
+.slot:nth-last-child(-n + 3) .tooltip {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.slot:hover .tooltip,
+.slot:focus .tooltip {
+  display: block;
+}
+
+.tooltip strong {
+  font-weight: 600;
+}
+
+/* Eje X: un ícono por tecnología */
+.axis {
+  margin-left: var(--axis-width);
+  padding-block: var(--space-2) var(--space-4);
+}
+
+/* Baldosa clara: algunos logos son oscuros (Django, Kafka) y no se verían sobre el fondo del editor */
+.icon {
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-icon-tile);
+  color: var(--color-icon-tile-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+}
+
+.logo {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  /* Más angostas para que en un celular entren todas, incluidas las de más años (a la derecha) */
+  .inner {
+    --axis-width: 1.5rem;
+    --column-min: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}

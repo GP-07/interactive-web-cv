@@ -20,12 +20,17 @@ export interface Project {
   url?: string;
 }
 
-/** 1 = conocimiento básico · 5 = experto */
-export type SkillLevel = 1 | 2 | 3 | 4 | 5;
-
 export interface Skill {
   name: string;
-  level: SkillLevel;
+  /** Años de experiencia profesional con la tecnología. */
+  years: number;
+  /** Archivo en public/icons/tech/, sin extensión. Sin ícono, se muestran las iniciales. */
+  icon?: string;
+}
+
+export interface SkillGroup {
+  title: string;
+  items: Skill[];
 }
 
 export interface Degree {
@@ -53,10 +58,10 @@ export interface CV {
   availability?: string;
   experience: Job[];
   skills: {
-    intro: string;
-    /** Nombre de cada nivel, del 1 al 5. */
-    levels: [string, string, string, string, string];
-    items: Skill[];
+    /** Unidad para los ejes y el detalle de cada barra: "years". */
+    unit: string;
+    /** Un gráfico por grupo, todos con la misma escala. */
+    groups: SkillGroup[];
   };
   education: {
     degrees: Degree[];

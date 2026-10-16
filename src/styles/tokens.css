@@ -17,6 +17,8 @@
   --color-status-text: #ffffff;
   --color-status-hover: rgb(255 255 255 / 0.15);
   --color-available: #7ee2a8;
+  --color-icon-tile: #e4e6ea;
+  --color-icon-tile-text: #3b3f45;
 
   /* Colores: resaltado de sintaxis */
   --syntax-keyword: #569cd6;
@@ -79,6 +81,7 @@
     --color-hover: #e8e8e8;
     --color-accent: #0f7b6c;
     --color-status-bg: #0f7b6c;
+    --color-icon-tile: #f3f4f6;
     --syntax-keyword: #0000ff;
     --syntax-string: #a31515;
     --syntax-function: #795e26;
@@ -104,6 +107,7 @@
   --color-hover: #e8e8e8;
   --color-accent: #0f7b6c;
   --color-status-bg: #0f7b6c;
+  --color-icon-tile: #f3f4f6;
   --syntax-keyword: #0000ff;
   --syntax-string: #a31515;
   --syntax-function: #795e26;

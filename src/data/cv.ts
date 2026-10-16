@@ -21,7 +21,7 @@ export const cv: CV = {
         "Product: InvGate Asset Management",
         "Focus on performance, scalability, and asynchronous processing challenges in a data-intensive environment with large volumes of interconnected asset data. Contribute to maintaining a reliable and efficient experience for enterprise customers managing complex IT infrastructures.",
       ],
-      stack: ["Python 3", "Django 5.2", "PostgreSQL", "MySQL", "Claude code"],
+      stack: ["Python 3", "Django 5.2", "PostgreSQL", "Claude code"],
     },
     {
       role: "Software Engineer",
@@ -56,21 +56,29 @@ export const cv: CV = {
     },
   ],
   skills: {
-    intro: "Technologies I work with, by level of experience",
-    levels: ["Familiar", "Intermediate", "Proficient", "Advanced", "Expert"],
-    items: [
-      { name: "Python", level: 5 },
-      { name: "Django", level: 5 },
-      { name: "PostgreSQL", level: 5 }, 
-      { name: "Java", level: 4 },
-      { name: "Spring Boot", level: 4 },
-      { name: "Claude Code", level: 3 },
-      { name: "AWS", level: 3 },
-      { name: "Kafka", level: 3 },
-      { name: "MySQL", level: 3 },
-      { name: "MongoDB", level: 3 },
-      { name: "Angular", level: 2 },
-      { name: "ELK", level: 2 },
+    unit: "years",
+    groups: [
+      {
+        title: "Current stack",
+        items: [
+          { name: "PostgreSQL", years: 6.5, icon: "postgresql" },
+          { name: "Python", years: 4.5, icon: "python" },
+          { name: "Django", years: 4.5, icon: "django" },
+          { name: "Claude Code", years: 1.5, icon: "claude" },
+        ],
+      },
+      {
+        title: "Also in my toolbox",
+        items: [
+          { name: "Java", years: 5.5, icon: "java" },
+          { name: "Spring Boot", years: 4, icon: "spring" },
+          { name: "Angular", years: 3.5, icon: "angular" },
+          { name: "MongoDB", years: 2, icon: "mongodb" },
+          { name: "AWS", years: 2, icon: "aws" },
+          { name: "Kafka", years: 2, icon: "kafka" },
+          { name: "ELK", years: 2, icon: "elasticsearch" },
+        ],
+      },
     ],
   },
   education: {

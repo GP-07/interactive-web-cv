@@ -9,7 +9,7 @@ export function Experience() {
   // Mismo color para la misma tecnología en todos los trabajos, sin importar la versión.
   const hues = techHues(
     cv.experience.flatMap((job) => job.stack),
-    cv.skills.items.map((skill) => skill.name),
+    cv.skills.groups.flatMap((group) => group.items.map((skill) => skill.name)),
   );
 
   return (
