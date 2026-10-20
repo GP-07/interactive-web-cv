@@ -1,47 +1,76 @@
+export type Locale = "es" | "en";
+
+/** Un valor con una versión por idioma. */
+export type Localized<T> = Record<Locale, T>;
+
+/**
+ * Las cuatro familias de color del sitio. Cada una significa siempre lo mismo:
+ * lenguajes y frameworks, datos, integración y mensajería, plataforma y herramientas.
+ */
+export type Category = "lang" | "data" | "int" | "plat";
+
+/** Mes en formato "AAAA-MM". */
+export type YearMonth = `${number}-${number}`;
+
 export interface Fact {
   label: string;
   value: string;
+  category: Category;
 }
 
-export interface Job {
-  role: string;
+export interface Era {
   company: string;
-  period: string;
-  highlights: string[];
-  stack: string[];
+  from: YearMonth;
+  to: YearMonth | "now";
 }
 
-export interface Project {
-  name: string;
-  year: number;
-  type: string;
-  description: string;
-  stack: string[];
-  url?: string;
+export interface TechSpan {
+  from: YearMonth;
+  to: YearMonth | "now";
 }
 
-export interface Skill {
-  name: string;
-  /** Años de experiencia profesional con la tecnología. */
-  years: number;
+export interface Tech {
+  /** Texto plano si se dice igual en los dos idiomas. */
+  name: string | Localized<string>;
+  /** Dónde se usó, en el orden de los períodos. */
+  where: string;
+  category: Category;
   /** Archivo en public/icons/tech/, sin extensión. Sin ícono, se muestran las iniciales. */
   icon?: string;
+  spans: TechSpan[];
 }
 
-export interface SkillGroup {
-  title: string;
-  items: Skill[];
+export interface Tag {
+  label: string;
+  category: Category;
 }
 
-export interface Degree {
-  title: string;
-  institution: string;
-  period: string;
+export interface Step {
+  label: string;
+  text: string;
+  category: Category;
 }
 
-export interface SpokenLanguage {
-  name: string;
-  level: string;
+export interface PathPoint {
+  layer: string;
+  checks: string[];
+}
+
+export interface ReasoningCase {
+  id: string;
+  category: Category;
+  kicker: string;
+  tabTitle: string;
+  quote: string;
+  steps: Step[];
+  pathLabel: string;
+  path: PathPoint[];
+}
+
+export interface NowItem {
+  label: string;
+  text: string;
+  category: Category;
 }
 
 export interface ContactLink {
@@ -49,27 +78,43 @@ export interface ContactLink {
   display: string;
 }
 
+/** Todo el texto de la página en un idioma. */
+export interface SiteContent {
+  meta: { title: string; description: string };
+  nav: { label: string; timeline: string; reasoning: string; now: string; contact: string };
+  ui: {
+    languageLabel: string;
+    themeLabel: string;
+    light: string;
+    dark: string;
+    copy: string;
+    copied: string;
+    years: string;
+    months: string;
+  };
+  hero: { eyebrow: string; titleStart: string; titleHighlight: string; lead: string; facts: Fact[] };
+  timeline: { eyebrow: string; title: string; legend: Record<Category, string>; liveLegend: string };
+  reasoning: {
+    eyebrow: string;
+    title: string;
+    tabsLabel: string;
+    checksTitle: string;
+    involvesLabel: string;
+    cases: ReasoningCase[];
+  };
+  now: { eyebrow: string; title: string; items: NowItem[] };
+  contact: { title: string };
+  footer: { tagline: string };
+}
+
 export interface CV {
   name: string;
-  title: string;
-  summary: string;
-  facts: Fact[];
-  /** Texto de la barra de estado. Si no está, no se muestra el indicador. */
-  availability?: string;
-  experience: Job[];
-  skills: {
-    /** Unidad para los ejes y el detalle de cada barra: "years". */
-    unit: string;
-    /** Un gráfico por grupo, todos con la misma escala. */
-    groups: SkillGroup[];
-  };
-  education: {
-    degrees: Degree[];
-    languages: SpokenLanguage[];
-  };
-  contact: {
-    intro: string;
-    email: string;
-    links: ContactLink[];
-  };
+  email: string;
+  links: ContactLink[];
+  /** Datos para schema.org (los leen Google y las herramientas de búsqueda de candidatos). */
+  profile: { jobTitle: string; worksFor: string; alumniOf: string; knowsAbout: string[] };
+  timeline: { start: YearMonth; eras: Era[]; techs: Tech[] };
+  /** Términos en inglés, iguales en los dos idiomas: por id de situación. */
+  reasoningTags: Record<string, Tag[]>;
+  content: Localized<SiteContent>;
 }
