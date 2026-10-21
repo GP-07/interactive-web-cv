@@ -1,0 +1,112 @@
+/* Barra fija arriba, semitransparente para que se intuya el contenido que pasa por debajo */
+.header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: var(--space-3) var(--gutter-end) var(--space-3) var(--gutter);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font: 700 var(--text-lg) / 1 var(--font-display);
+  text-decoration: none;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--color-cobalt), var(--color-teal));
+  color: var(--color-logo-mark);
+  font-size: var(--text-sm);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  font-size: var(--text-ui);
+  font-weight: 500;
+}
+
+.nav a {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--color-text);
+  background: var(--color-cobalt-tint);
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Control segmentado: la opción activa queda rellena, bien visible */
+.segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font: 600 var(--text-sm) / 1 var(--font-sans);
+  text-decoration: none;
+}
+
+.option:hover {
+  color: var(--color-text);
+}
+
+.option[aria-pressed="true"],
+.option[aria-current="page"] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.option svg {
+  flex: none;
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-inline: calc(-1 * var(--space-3));
+  }
+}
