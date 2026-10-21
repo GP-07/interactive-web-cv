@@ -40,31 +40,13 @@ export interface Tech {
   spans: TechSpan[];
 }
 
-export interface Tag {
-  label: string;
-  category: Category;
-}
+/** Tonos de la paleta, para dibujos donde cada elemento lleva su propio color. */
+export type Hue = "orange" | "teal" | "cobalt" | "rose" | "violet";
 
-export interface Step {
-  label: string;
-  text: string;
-  category: Category;
-}
-
-export interface PathPoint {
-  layer: string;
-  checks: string[];
-}
-
-export interface ReasoningCase {
-  id: string;
-  category: Category;
-  kicker: string;
-  tabTitle: string;
-  quote: string;
-  steps: Step[];
-  pathLabel: string;
-  path: PathPoint[];
+/** Un conjunto del diagrama de aprendizajes: cada línea del nombre va en un renglón. */
+export interface LearningSet {
+  name: string[];
+  hue: Hue;
 }
 
 export interface NowItem {
@@ -81,7 +63,7 @@ export interface ContactLink {
 /** Todo el texto de la página en un idioma. */
 export interface SiteContent {
   meta: { title: string; description: string };
-  nav: { label: string; timeline: string; reasoning: string; now: string; contact: string };
+  nav: { label: string; learnings: string; timeline: string; now: string; contact: string };
   ui: {
     languageLabel: string;
     themeLabel: string;
@@ -94,13 +76,20 @@ export interface SiteContent {
   };
   hero: { eyebrow: string; titleStart: string; titleHighlight: string; lead: string; facts: Fact[] };
   timeline: { eyebrow: string; title: string; legend: Record<Category, string>; liveLegend: string };
-  reasoning: {
+  learnings: {
     eyebrow: string;
     title: string;
-    tabsLabel: string;
-    checksTitle: string;
-    involvesLabel: string;
-    cases: ReasoningCase[];
+    intro: string;
+    /** Descripción del dibujo para lectores de pantalla. */
+    diagramLabel: string;
+    sets: LearningSet[];
+    /** El conjunto vacío, punteado: lo que está por venir. */
+    next: string[];
+    coreLabel: string;
+    /** Lo que se mantuvo en todas las etapas: va en la intersección. */
+    core: string[];
+    /** Nota con flecha hacia el conjunto vacío, un renglón por elemento. */
+    note: string[];
   };
   now: { eyebrow: string; title: string; items: NowItem[] };
   contact: { title: string };
@@ -114,7 +103,7 @@ export interface CV {
   /** Datos para schema.org (los leen Google y las herramientas de búsqueda de candidatos). */
   profile: { jobTitle: string; worksFor: string; alumniOf: string; knowsAbout: string[] };
   timeline: { start: YearMonth; eras: Era[]; techs: Tech[] };
-  /** Términos en inglés, iguales en los dos idiomas: por id de situación. */
-  reasoningTags: Record<string, Tag[]>;
+  /** Palabras clave para buscadores que no aparecen como texto visible: van a schema.org y a <meta name="keywords">. */
+  seoKeywords: string[];
   content: Localized<SiteContent>;
 }

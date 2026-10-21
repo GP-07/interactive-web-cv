@@ -6,11 +6,13 @@ export function Section({
   id,
   eyebrow,
   title,
+  intro,
   children,
 }: {
   id: string;
   eyebrow: string;
   title: string;
+  intro?: string;
   children: ReactNode;
 }) {
   const titleId = `${id}-title`;
@@ -22,6 +24,7 @@ export function Section({
           <h2 id={titleId} className={styles.title}>
             {title}
           </h2>
+          {intro && <p className={styles.intro}>{intro}</p>}
         </header>
         {children}
       </div>

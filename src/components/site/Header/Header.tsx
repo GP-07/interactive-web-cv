@@ -17,8 +17,8 @@ function initials(name: string) {
 export function Header({ locale }: { locale: Locale }) {
   const { nav, ui } = cv.content[locale];
   const links = [
+    { id: "learnings", label: nav.learnings },
     { id: "timeline", label: nav.timeline },
-    { id: "reasoning", label: nav.reasoning },
     { id: "now", label: nav.now },
     { id: "contact", label: nav.contact },
   ];

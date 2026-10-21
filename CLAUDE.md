@@ -13,6 +13,8 @@ Prioridades: impacto visual, rendimiento, accesibilidad y SEO.
 - Nunca hardcodear colores ni espaciados: usar siempre los tokens.
 - Tema claro por defecto; el oscuro se elige con el selector y se guarda en `localStorage` (script en `<head>` para que no parpadee).
 - Cuatro familias de color con significado fijo (`data-category`: lang, data, int, plat). Usarlas siempre con ese significado.
+- La sección "Aprendizajes" es un diagrama de conjuntos (SVG generado en el servidor). Es la única que usa el violeta y el dorado.
+- `seoKeywords` en `src/data/cv.ts`: palabras clave que no se muestran; van solo a schema.org y a `<meta name="keywords">`. Nunca esconder texto en la página para SEO.
 - La línea de tiempo se calcula con la fecha de hoy dentro de `"use cache"` + `cacheLife("days")`.
 - SEO: `hreflang`, `sitemap.ts`, `robots.ts` y JSON-LD `Person`. Al desplegar, definir `NEXT_PUBLIC_SITE_URL` con el dominio real.
 

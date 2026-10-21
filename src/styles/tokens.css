@@ -5,6 +5,7 @@
   Cuatro familias de color con significado fijo en todo el sitio:
   cobalto = lenguajes y frameworks, naranja = datos,
   verde azulado = integración y mensajería, rosa = plataforma y herramientas.
+  El violeta y el dorado solo se usan en el diagrama de aprendizajes.
 */
 :root {
   /* Colores: base */
@@ -28,6 +29,14 @@
   --color-orange-tint: #ffeee2;
   --color-rose: #d93d74;
   --color-rose-tint: #fce6ee;
+  --color-violet: #7a4ddb;
+  --color-violet-tint: #eee7ff;
+
+  /* Colores: intersección del diagrama de aprendizajes (dorado, igual en los dos temas) */
+  --color-core-from: #ffd566;
+  --color-core-to: #ffa24d;
+  --color-core-text: #3a2200;
+  --set-fill-alpha: 0.13;
 
   /* Tipografía (las variables --font-display-face, etc. las define next/font) */
   --font-display: var(--font-display-face), "Avenir Next", "Segoe UI", sans-serif;
@@ -100,6 +109,9 @@
   --color-orange-tint: rgb(255 159 94 / 0.13);
   --color-rose: #ff7ea9;
   --color-rose-tint: rgb(255 126 169 / 0.13);
+  --color-violet: #b39bff;
+  --color-violet-tint: rgb(179 155 255 / 0.16);
+  --set-fill-alpha: 0.16;
 
   color-scheme: dark;
 }

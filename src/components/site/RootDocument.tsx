@@ -16,6 +16,7 @@ export function siteMetadata(locale: Locale): Metadata {
     metadataBase: new URL(siteUrl),
     title: meta.title,
     description: meta.description,
+    keywords: [...cv.profile.knowsAbout, ...cv.seoKeywords],
     alternates: {
       canonical: localePath[locale],
       languages: { es: localePath.es, en: localePath.en, "x-default": localePath.es },

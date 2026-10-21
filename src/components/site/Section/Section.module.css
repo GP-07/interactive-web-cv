@@ -28,3 +28,10 @@
   font-weight: 700;
   line-height: var(--leading-heading);
 }
+
+.intro {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
