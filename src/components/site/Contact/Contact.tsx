@@ -27,6 +27,9 @@ export function Contact({ locale }: { locale: Locale }) {
             ))}
           </ul>
         )}
+        <a className={styles.download} href={cv.resume.url} download={cv.resume.fileName}>
+          {ui.downloadCv}
+        </a>
       </div>
     </section>
   );

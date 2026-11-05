@@ -85,6 +85,7 @@ export interface SiteContent {
     dark: string;
     copy: string;
     copied: string;
+    downloadCv: string;
     years: string;
     months: string;
   };
@@ -93,6 +94,8 @@ export interface SiteContent {
     /** Dónde puedo trabajar: van como etiquetas al lado de la de arriba. */
     locationsLabel: string;
     locations: string[];
+    /** Ciudadanía y permiso de trabajo: lo primero que filtra un recruiter. */
+    workEligibility: string;
     titleStart: string;
     titleHighlight: string;
     lead: string;
@@ -124,6 +127,8 @@ export interface CV {
   name: string;
   email: string;
   links: ContactLink[];
+  /** CV apto ATS para descargar (en public/), generado desde resume/cv-en.html. */
+  resume: { url: string; fileName: string };
   /** Datos para schema.org (los leen Google y las herramientas de búsqueda de candidatos). */
   profile: {
     jobTitle: string;

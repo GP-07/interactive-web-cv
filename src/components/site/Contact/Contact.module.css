@@ -46,6 +46,20 @@
   filter: brightness(0.96);
 }
 
+/* Secundario, debajo de los links: borde en vez de fondo */
+.download {
+  justify-self: start;
+  padding: var(--space-3) var(--space-5);
+  border: 1.5px solid var(--color-on-accent);
+  border-radius: var(--radius-pill);
+  font: 600 var(--text-ui) / 1 var(--font-sans);
+  text-decoration: none;
+}
+
+.download:hover {
+  background: color-mix(in srgb, var(--color-on-accent) 12%, transparent);
+}
+
 .links a {
   font-weight: 500;
   text-underline-offset: 4px;

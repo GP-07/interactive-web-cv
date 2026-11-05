@@ -1,0 +1,114 @@
+<!doctype html>
+<!--
+  CV apto ATS (inglés). Una columna, encabezados estándar, texto real y sin íconos ni tablas.
+  Generar el PDF con Chrome:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer \
+    --print-to-pdf=public/cv/guido-pallas-cv.pdf resume/cv-en.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guido Pallas - Backend Software Engineer - CV</title>
+<meta name="author" content="Guido Pallas">
+<style>
+  @page { size: A4; margin: 16mm 17mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #1a1a1a; font: 10.2pt/1.42 Arial, Helvetica, sans-serif; }
+  h1 { margin: 0; font-size: 21pt; line-height: 1.1; }
+  .headline { margin: 2pt 0 5pt; font-size: 12pt; font-weight: bold; color: #333; }
+  .contact { margin: 0; color: #333; }
+  h2 {
+    margin: 13pt 0 5pt; padding-bottom: 2pt; border-bottom: 1px solid #999;
+    font-size: 11pt; letter-spacing: .04em; text-transform: uppercase;
+  }
+  p { margin: 0; }
+  ul { margin: 3pt 0 0; padding-left: 14pt; }
+  li { margin-bottom: 2pt; }
+  .job { margin-bottom: 9pt; break-inside: avoid; }
+  .job h3 { margin: 0; font-size: 10.6pt; }
+  .meta { margin: 0; color: #333; }
+  .tech { margin-top: 3pt; }
+  .skills p { margin-bottom: 2pt; }
+</style>
+</head>
+<body>
+
+<h1>Guido Pallas</h1>
+<p class="headline">Backend Software Engineer</p>
+<p class="contact">Barcelona, Spain | Open to remote | EU citizen, eligible to work in Spain</p>
+<p class="contact">guidopallas@gmail.com | linkedin.com/in/guidopallas</p>
+
+<h2>Summary</h2>
+<p>Backend software engineer with 10 years of experience building services with Python/Django and Java/Spring Boot
+in banking, agribusiness and enterprise SaaS. I design solutions sized to what the product needs, without
+over-engineering and easy to change, and I work with product and business to understand the problem before writing
+code. Experience with monolithic, microservice and event-driven architectures, and with AI-assisted development
+using Claude Code.</p>
+
+<h2>Skills</h2>
+<div class="skills">
+  <p><strong>Languages and frameworks:</strong> Python, Django, Java (8, 11), Spring Boot, Hibernate, Java EJB, Angular (4/5)</p>
+  <p><strong>Databases:</strong> PostgreSQL, MongoDB (relational and non-relational databases)</p>
+  <p><strong>Architecture and APIs:</strong> REST APIs, SOAP web services (Oracle SOA Suite, OSB), microservices, event-driven architecture, hexagonal architecture (ports and adapters), monolithic architectures, object-oriented programming</p>
+  <p><strong>Messaging and async processing:</strong> Kafka, JMS, asynchronous processing</p>
+  <p><strong>Cloud and observability:</strong> AWS (RDS, S3), ELK</p>
+  <p><strong>Tools:</strong> GitHub, Claude Code (AI-assisted development)</p>
+</div>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <h3>Software Engineer</h3>
+  <p class="meta">InvGate | March 2022 - Present</p>
+  <ul>
+    <li>Work on InvGate Asset Management, an IT asset management SaaS product used by companies of all sizes.</li>
+    <li>Focus on performance, scalability and asynchronous processing in a data-intensive environment with large volumes of interconnected asset data.</li>
+    <li>Help keep the product reliable and efficient for enterprise customers managing complex IT infrastructures.</li>
+    <li>Since 2026, build features with an AI-first workflow using Claude Code: planning, implementation and a full code review before opening the pull request for peer review.</li>
+  </ul>
+  <p class="tech"><strong>Tech stack:</strong> Python 3, Django 5.2, PostgreSQL, Claude Code</p>
+</div>
+
+<div class="job">
+  <h3>Software Engineer</h3>
+  <p class="meta">Santander Tecnología | February 2020 - March 2022</p>
+  <ul>
+    <li>Part of the team that launched DEBIN, a new payment method.</li>
+    <li>Implemented critical components using a ports and adapters (hexagonal) architecture, improving maintainability.</li>
+    <li>Integrated with third parties (clearing houses and payment processors) in a fault-tolerant system that must not process a payment more than once.</li>
+    <li>Contributed to architecture and product decisions, and at times acted as the team's technical reference.</li>
+    <li>Mentored a new team member during onboarding.</li>
+  </ul>
+  <p class="tech"><strong>Tech stack:</strong> Java 11, Spring Boot, MongoDB, SOAP web services</p>
+</div>
+
+<div class="job">
+  <h3>Full Stack Developer</h3>
+  <p class="meta">IT Resources (client: Monsanto/Bayer) | March 2018 - February 2020</p>
+  <ul>
+    <li>Owned services end to end in an event-driven microservice architecture: analysis, development, deployment on AWS, monitoring and production support.</li>
+    <li>Kept data consistent across services that were part of a larger solution.</li>
+    <li>Wrote extensive unit tests and worked on the front end with Angular.</li>
+    <li>Resolved production incidents, using ELK for observability.</li>
+  </ul>
+  <p class="tech"><strong>Tech stack:</strong> Java 8, Spring Boot, Hibernate, PostgreSQL, AWS, Angular 4/5, Kafka, ELK</p>
+</div>
+
+<div class="job">
+  <h3>Software Developer</h3>
+  <p class="meta">Ayi &amp; Asociados | August 2016 - March 2018</p>
+  <ul>
+    <li>Developed backend services in Java and Java EJB for an omnichannel (web and mobile) platform, applying REST principles.</li>
+    <li>Got up to speed quickly with Java EJB for backend service development.</li>
+  </ul>
+  <p class="tech"><strong>Tech stack:</strong> Java, Java EJB</p>
+</div>
+
+<h2>Education</h2>
+<p><strong>IT Engineering</strong> | UADE (Universidad Argentina de la Empresa) | December 2019</p>
+
+<h2>Languages</h2>
+<p>Spanish: Native | English: Advanced</p>
+
+</body>
+</html>
