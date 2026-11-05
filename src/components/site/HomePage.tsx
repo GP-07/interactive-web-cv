@@ -6,6 +6,7 @@ import { Header } from "@/components/site/Header/Header";
 import { Hero } from "@/components/site/Hero/Hero";
 import { Timeline } from "@/components/site/Timeline/Timeline";
 import { Learnings } from "@/components/site/Learnings/Learnings";
+import { Projects } from "@/components/site/Projects/Projects";
 import { Now } from "@/components/site/Now/Now";
 import { Contact } from "@/components/site/Contact/Contact";
 import { Footer } from "@/components/site/Footer/Footer";
@@ -22,6 +23,11 @@ function PersonJsonLd({ locale }: { locale: Locale }) {
     description: cv.content[locale].meta.description,
     worksFor: { "@type": "Organization", name: cv.profile.worksFor },
     alumniOf: { "@type": "CollegeOrUniversity", name: cv.profile.alumniOf },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: cv.profile.location.city,
+      addressCountry: cv.profile.location.country,
+    },
     knowsLanguage: ["es", "en"],
     knowsAbout: [...cv.profile.knowsAbout, ...cv.seoKeywords],
     sameAs: cv.links.map((link) => link.url),
@@ -38,6 +44,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <Hero locale={locale} />
         <Learnings locale={locale} />
         <Timeline locale={locale} />
+        <Projects locale={locale} />
         <Now locale={locale} />
         <Contact locale={locale} />
       </main>

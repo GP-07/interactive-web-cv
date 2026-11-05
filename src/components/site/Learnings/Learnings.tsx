@@ -16,6 +16,7 @@ const hueVar: Record<Hue, string> = {
   cobalt: "var(--color-cobalt)",
   rose: "var(--color-rose)",
   violet: "var(--color-violet)",
+  green: "var(--color-green)",
 };
 
 interface Petal {

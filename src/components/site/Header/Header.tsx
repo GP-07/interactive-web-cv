@@ -19,6 +19,7 @@ export function Header({ locale }: { locale: Locale }) {
   const links = [
     { id: "learnings", label: nav.learnings },
     { id: "timeline", label: nav.timeline },
+    { id: "projects", label: nav.projects },
     { id: "now", label: nav.now },
     { id: "contact", label: nav.contact },
   ];

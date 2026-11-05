@@ -8,7 +8,20 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <div className={styles.hero}>
       <div className={styles.inner}>
-        <p className={styles.pill}>{hero.eyebrow}</p>
+        <div className={styles.tags}>
+          <p className={styles.pill}>{hero.eyebrow}</p>
+          <ul className={styles.locations} aria-label={hero.locationsLabel}>
+            {hero.locations.map((place) => (
+              <li key={place} className={styles.location}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+                  <circle cx="12" cy="10" r="2.3" />
+                </svg>
+                {place}
+              </li>
+            ))}
+          </ul>
+        </div>
         <h1 className={styles.title}>
           {hero.titleStart} <mark className={styles.highlight}>{hero.titleHighlight}</mark>
         </h1>

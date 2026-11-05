@@ -41,12 +41,26 @@ export interface Tech {
 }
 
 /** Tonos de la paleta, para dibujos donde cada elemento lleva su propio color. */
-export type Hue = "orange" | "teal" | "cobalt" | "rose" | "violet";
+export type Hue = "orange" | "teal" | "cobalt" | "rose" | "violet" | "green";
 
 /** Un conjunto del diagrama de aprendizajes: cada línea del nombre va en un renglón. */
 export interface LearningSet {
   name: string[];
   hue: Hue;
+}
+
+/** Una etiqueta de tecnología, con el color de su familia. */
+export interface TechTag {
+  name: string;
+  category: Category;
+}
+
+export interface Project {
+  name: string;
+  /** Tipo de trabajo y período: "Freelance · 2021–2022". */
+  meta: string;
+  description: string;
+  stack: TechTag[];
 }
 
 export interface NowItem {
@@ -63,7 +77,7 @@ export interface ContactLink {
 /** Todo el texto de la página en un idioma. */
 export interface SiteContent {
   meta: { title: string; description: string };
-  nav: { label: string; learnings: string; timeline: string; now: string; contact: string };
+  nav: { label: string; learnings: string; timeline: string; projects: string; now: string; contact: string };
   ui: {
     languageLabel: string;
     themeLabel: string;
@@ -74,7 +88,16 @@ export interface SiteContent {
     years: string;
     months: string;
   };
-  hero: { eyebrow: string; titleStart: string; titleHighlight: string; lead: string; facts: Fact[] };
+  hero: {
+    eyebrow: string;
+    /** Dónde puedo trabajar: van como etiquetas al lado de la de arriba. */
+    locationsLabel: string;
+    locations: string[];
+    titleStart: string;
+    titleHighlight: string;
+    lead: string;
+    facts: Fact[];
+  };
   timeline: { eyebrow: string; title: string; legend: Record<Category, string>; liveLegend: string };
   learnings: {
     eyebrow: string;
@@ -91,6 +114,7 @@ export interface SiteContent {
     /** Nota con flecha hacia el conjunto vacío, un renglón por elemento. */
     note: string[];
   };
+  projects: { eyebrow: string; title: string; stackLabel: string; items: Project[] };
   now: { eyebrow: string; title: string; items: NowItem[] };
   contact: { title: string };
   footer: { tagline: string };
@@ -101,7 +125,14 @@ export interface CV {
   email: string;
   links: ContactLink[];
   /** Datos para schema.org (los leen Google y las herramientas de búsqueda de candidatos). */
-  profile: { jobTitle: string; worksFor: string; alumniOf: string; knowsAbout: string[] };
+  profile: {
+    jobTitle: string;
+    worksFor: string;
+    alumniOf: string;
+    /** Ciudad y país (código ISO de dos letras) donde vivo. */
+    location: { city: string; country: string };
+    knowsAbout: string[];
+  };
   timeline: { start: YearMonth; eras: Era[]; techs: Tech[] };
   /** Palabras clave para buscadores que no aparecen como texto visible: van a schema.org y a <meta name="keywords">. */
   seoKeywords: string[];

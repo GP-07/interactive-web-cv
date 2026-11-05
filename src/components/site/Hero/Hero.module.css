@@ -16,6 +16,42 @@
   padding: var(--space-18) var(--gutter-end) var(--space-14) var(--gutter);
 }
 
+/* Etiqueta principal y ubicaciones en una fila; en pantallas angostas bajan de renglón */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.locations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  color: var(--color-text-muted);
+  font: 600 var(--text-sm) / 1 var(--font-sans);
+}
+
+.location svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
